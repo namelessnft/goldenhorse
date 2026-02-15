@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Background Music -->
+    <audio id="bgm" autoplay loop>
+        <source src="bgm/chinese.mp3" type="audio/mpeg">
+    </audio>
+    <meta name="description" content="Prosperity Awaits Those Who Follow The Golden Horse 🐴">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=Orbitron:wght@700;900&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Decorative Lanterns -->
+    <div class="lanterns">
+        <div class="lantern lantern-1">
+            <div class="lantern-top"></div>
+            <div class="lantern-body"></div>
+            <div class="lantern-bottom"></div>
+        </div>
+        <div class="lantern lantern-2">
+            <div class="lantern-top"></div>
+            <div class="lantern-body"></div>
+            <div class="lantern-bottom"></div>
+        </div>
+        <div class="lantern lantern-3">
+            <div class="lantern-top"></div>
+            <div class="lantern-body"></div>
+            <div class="lantern-bottom"></div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="Golden Horse Logo" class="logo-img">
+                <span class="logo-text" data-en="Golden Horse" data-zh="金马">Golden Horse</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" data-en="Home" data-zh="首页">Home</a></li>
+                <li><a href="#about" data-en="About" data-zh="关于">About</a></li>
+                <li><a href="#tokenomics" data-en="Tokenomics" data-zh="代币经济学">Tokenomics</a></li>
+                <li><a href="#howtobuy" data-en="How to Buy" data-zh="如何购买">How to Buy</a></li>
+                <li><a href="#community" data-en="Community" data-zh="社区">Community</a></li>
+            </ul>
+            <button class="lang-toggle" id="langToggle">
+                <span class="lang-en active">EN</span>
+                <span class="lang-zh">中文</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-float">
+                <img src="img/float.png" alt="Golden Horse" class="float-image" id="floatImage">
+            </div>
+            <h1 class="hero-title">
+                <span class="title-main">Golden Horse 金马</span>
+            </h1>
+            <p class="hero-tagline" data-en="Prosperity Awaits Those Who Follow The Golden Horse" data-zh="紧随金马，财富自来">
+                Prosperity Awaits Those Who Follow The Golden Horse</p>
+            <p class="hero-ticker">$GOLDENHORSE金马</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-section">
+                <p class="countdown-label" data-en="Chinese New Year 2026" data-zh="2026年农历新年">Chinese New Year 2026</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label-small" data-en="Days" data-zh="天">Days</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label-small" data-en="Hours" data-zh="时">Hours</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label-small" data-en="Minutes" data-zh="分">Minutes</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label-small" data-en="Seconds" data-zh="秒">Seconds</div>
+                    </div>
+                </div>
+                <p class="countdown-message" id="countdownMessage" style="display: none;"
+                    data-en="🐴 Happy New Year 2026! 🐴" data-zh="🐴 新年快乐 2026! 🐴">🐴 Happy New Year 2026! 🐴</p>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" data-en="Buy Now" data-zh="立即购买">Buy Now</a>
+                <a href="#" class="btn btn-secondary" data-en="View Chart" data-zh="查看图表">View Chart</a>
+            </div>
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About Golden Horse" data-zh="关于金马">About Golden Horse</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description"
+                        data-en="A lucky memecoin celebrating the Year of the Horse. Join the herd and ride to prosperity! Golden Horse brings fortune to all who believe in the power of lunar luck."
+                        data-zh="庆祝马年的幸运模因币。加入马群，奔向繁荣！金马为所有相信农历运气的人带来财富。">A lucky memecoin celebrating the Year of the
+                        Horse. Join the herd and ride to prosperity! Golden Horse brings fortune to all who believe in
+                        the power of lunar luck.</p>
+
+                    <div class="contract-section">
+                        <p class="contract-label" data-en="Contract Address" data-zh="合约地址">Contract Address</p>
+                        <div class="contract-box">
+                            <span class="contract-address" data-en="Coming Soon" data-zh="即将推出">Coming Soon</span>
+                            <button class="copy-btn" data-en="Copy" data-zh="复制">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="dexscreener-section">
+                        <a href="#" class="dexscreener-btn" data-en="View on DexScreener"
+                            data-zh="在 DexScreener 上查看">View on DexScreener</a>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card">
+                        <img src="img/Profile pic.jpg" alt="Golden Horse Profile" class="profile-pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="tokenomics fade-in" id="tokenomics">
+        <div class="container">
+            <h2 class="section-title" data-en="Tokenomics" data-zh="代币经济学">Tokenomics</h2>
+            <div class="tokenomics-content">
+                <div class="tokenomics-visual">
+                    <img src="img/lunar.jpg" alt="Tokenomics" class="tokenomics-image">
+                </div>
+                <div class="tokenomics-stats">
+                    <div class="token-stat interactive" onclick="showTokenDetails('supply')">
+                        <div class="token-stat-value">1B</div>
+                        <div class="token-stat-label" data-en="Total Supply" data-zh="总供应量">Total Supply</div>
+                    </div>
+                    <div class="token-stat interactive" onclick="showTokenDetails('tax')">
+                        <div class="token-stat-value">0%</div>
+                        <div class="token-stat-label" data-en="Tax" data-zh="税费">Tax</div>
+                    </div>
+                    <div class="token-stat interactive" onclick="showTokenDetails('community')">
+                        <div class="token-stat-value">100%</div>
+                        <div class="token-stat-label" data-en="Community" data-zh="社区">Community</div>
+                    </div>
+                </div>
+                <div class="token-details" id="tokenDetails">
+                    <p data-en="Click on any tokenomics to learn more!" data-zh="点击任何代币经济学了解详情！">Click on any tokenomics
+                        to learn more!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section class="howtobuy fade-in" id="howtobuy">
+        <div class="container">
+            <h2 class="section-title" data-en="How to Buy" data-zh="如何购买">How to Buy</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <img src="img/metamask.png" alt="MetaMask" class="step-icon-img">
+                    <h3 data-en="CREATE A WALLET" data-zh="创建钱包">CREATE A WALLET</h3>
+                    <p data-en="Visit metamask.io or download MetaMask or Trust Wallet."
+                        data-zh="访问 metamask.io 或下载 MetaMask 或 Trust Wallet。">Visit metamask.io or download MetaMask or
+                        Trust Wallet.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <img src="img/bnb.png" alt="BNB" class="step-icon-img">
+                    <h3 data-en="GET SOME $BNB" data-zh="获取 $BNB">GET SOME $BNB</h3>
+                    <p data-en="Buy or deposit BNB to your wallet. Purchase on Binance, Coinbase, or in your wallet."
+                        data-zh="购买或存入 BNB 到您的钱包。在 Binance、 Coinbase 或您的钱包中购买。">Buy or deposit BNB to your wallet.
+                        Purchase on Binance, Coinbase, or in your wallet.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <img src="img/swap.png" alt="Swap" class="step-icon-img">
+                    <h3 data-en="SWAP $BNB FOR $GOLDENHORSE金马" data-zh="兑换 $GOLDENHORSE金马">SWAP $BNB FOR $GOLDENHORSE金马
+                    </h3>
+                    <p data-en="Use PancakeSwap to swap $BNB for $GOLDENHORSE金马 on BSC."
+                        data-zh="使用 PancakeSwap 在 BSC 上将 $BNB 换成 $GOLDENHORSE金马。">Use PancakeSwap to swap $BNB for
+                        $GOLDENHORSE金马 on BSC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community fade-in" id="community">
+        <div class="container">
+            <h2 class="section-title" data-en="Join Our Community" data-zh="加入我们的社区">Join Our Community</h2>
+            <div class="community-visual">
+                <img src="img/moon.jpg" alt="Community" class="community-image">
+            </div>
+            <p class="community-text" data-en="Be part of the Golden Horse herd! Together we'll ride to the moon!"
+                data-zh="成为金马马群的一部分！一起奔向月球！">Be part of the Golden Horse herd! Together we'll ride to the moon!</p>
+            <div class="social-links">
+                <a href="#" class="social-btn telegram">
+                    <img src="img/telegram.png" alt="Telegram" class="social-icon-img">
+                    <span data-en="Telegram" data-zh="电报">Telegram</span>
+                </a>
+                <a href="#" class="social-btn twitter">
+                    <span class="social-icon">𝕏</span>
+                    <span data-en="Twitter" data-zh="推特">Twitter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">🐴 Golden Horse 金马 🐴</p>
+            <p class="footer-copyright">© 2026 Golden Horse 金马. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
