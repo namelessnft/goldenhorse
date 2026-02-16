@@ -288,6 +288,10 @@ body.zh h3 {
     width: 100%;
 }
 
+.mobile-lang-toggle {
+    display: none;
+}
+
 .lang-toggle {
     display: flex;
     background: var(--bg-light);
