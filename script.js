@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 function initLanguageToggle() {
     const langToggle = document.getElementById('langToggle');
+    const langToggleMobile = document.getElementById('langToggleMobile');
     const langEn = langToggle.querySelector('.lang-en');
     const langZh = langToggle.querySelector('.lang-zh');
 
@@ -24,11 +25,21 @@ function initLanguageToggle() {
     const savedLang = localStorage.getItem('goldenhorse-lang') || 'en';
     setLanguage(savedLang);
 
+    // Desktop toggle
     langToggle.addEventListener('click', () => {
         const currentLang = document.body.classList.contains('zh') ? 'zh' : 'en';
         const newLang = currentLang === 'en' ? 'zh' : 'en';
         setLanguage(newLang);
     });
+
+    // Mobile toggle
+    if (langToggleMobile) {
+        langToggleMobile.addEventListener('click', () => {
+            const currentLang = document.body.classList.contains('zh') ? 'zh' : 'en';
+            const newLang = currentLang === 'en' ? 'zh' : 'en';
+            setLanguage(newLang);
+        });
+    }
 
     function setLanguage(lang) {
         document.body.classList.remove('en', 'zh');
@@ -37,9 +48,21 @@ function initLanguageToggle() {
         if (lang === 'zh') {
             langEn.classList.remove('active');
             langZh.classList.add('active');
+            if (langToggleMobile) {
+                const mobileLangEn = langToggleMobile.querySelector('.lang-en');
+                const mobileLangZh = langToggleMobile.querySelector('.lang-zh');
+                mobileLangEn.classList.remove('active');
+                mobileLangZh.classList.add('active');
+            }
         } else {
             langZh.classList.remove('active');
             langEn.classList.add('active');
+            if (langToggleMobile) {
+                const mobileLangEn = langToggleMobile.querySelector('.lang-en');
+                const mobileLangZh = langToggleMobile.querySelector('.lang-zh');
+                mobileLangZh.classList.remove('active');
+                mobileLangEn.classList.add('active');
+            }
         }
 
         // Update all translatable elements

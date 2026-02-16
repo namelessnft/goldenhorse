@@ -918,6 +918,16 @@ body.zh .step-card h3 {
     line-height: 1.5;
 }
 
+.phase-list li.completed {
+    color: #4CAF50;
+}
+
+.phase-list li.completed::before {
+    content: '✓';
+    color: #4CAF50;
+    font-weight: bold;
+}
+
 .phase-list li::before {
     content: '🐴';
     position: absolute;
@@ -1074,6 +1084,10 @@ body.zh .step-card h3 {
 
     .nav-links.active {
         transform: translateY(0);
+    }
+
+    .mobile-lang-toggle {
+        display: block;
     }
 
     .lang-toggle {
