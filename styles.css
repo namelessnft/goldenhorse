@@ -831,6 +831,97 @@ body.zh .step-card h3 {
 }
 
 /* ============================================
+   Roadmap Section
+   ============================================ */
+.roadmap {
+    background: var(--bg-dark);
+    position: relative;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+.roadmap-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.roadmap-phase {
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(45, 21, 21, 0.5) 100%);
+    border: 2px solid var(--secondary-gold);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.roadmap-phase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-red), var(--primary-gold));
+}
+
+.roadmap-phase:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+    border-color: var(--primary-gold);
+}
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.phase-number {
+    font-family: var(--font-ticker);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.phase-title {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+}
+
+.phase-list {
+    list-style: none;
+}
+
+.phase-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.phase-list li::before {
+    content: '🐴';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ============================================
    Community Section
    ============================================ */
 .community {
