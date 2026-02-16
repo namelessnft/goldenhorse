@@ -849,17 +849,21 @@ body.zh .step-card h3 {
 }
 
 .roadmap-timeline {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    display: flex;
+    gap: 20px;
     margin-top: 60px;
+    overflow-x: auto;
+    padding-bottom: 20px;
 }
 
 .roadmap-phase {
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
     background: linear-gradient(135deg, var(--bg-light) 0%, rgba(45, 21, 21, 0.5) 100%);
     border: 2px solid var(--secondary-gold);
     border-radius: var(--border-radius);
-    padding: 30px;
+    padding: 25px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
