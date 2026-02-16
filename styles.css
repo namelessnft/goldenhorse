@@ -918,13 +918,20 @@ body.zh .step-card h3 {
     line-height: 1.5;
 }
 
+.phase-list li::before {
+    content: '🐴';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 .phase-list li.completed {
-    color: #4CAF50;
+    color: var(--primary-gold);
 }
 
 .phase-list li.completed::before {
     content: '✓';
-    color: #4CAF50;
+    color: var(--primary-gold);
     font-weight: bold;
 }
 
